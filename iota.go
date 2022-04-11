@@ -1,4 +1,6 @@
 // iota，特殊常量，可以认为是一个可以被编译器修改的常量。
+// iota 在 const关键字出现时将被重置为 0(const 内部的第一行之前)
+// const 中每新增一行常量声明将使 iota 计数一次(iota 可理解为 const 语句块中的行索引)。
 
 package main
 
@@ -7,6 +9,7 @@ import (
 	"unsafe"
 )
 
+// 1. 等效写法
 // const (
 // 	a = iota
 // 	b = iota
@@ -20,11 +23,13 @@ const (
 	c
 )
 
+
 func main() {
 	fmt.Println(a, b, c)
 
 	fmt.Println("<<==========================>>")
 
+	// 2. example
 	const (
 		a = iota // 0
 		b        // 1
@@ -40,6 +45,7 @@ func main() {
 
 	fmt.Println("<<==========================>>")
 
+	// 3. example
 	const (
 		o = 1 << iota
 		p = 3 << iota
@@ -59,6 +65,7 @@ func main() {
 
 	fmt.Println("<<==========================>>")
 
+	// 3. example
 	// iota 只是在同一个 const 常量组内递增，每当有新的 const 关键字时，iota 计数会重新开始
 	const (
 		s = iota
