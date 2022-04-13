@@ -1,0 +1,5 @@
+Bill breakdown: 
+cake:            ...$5.99 
+peer:            ...$5.12 
+tip:             ...$12.00 
+total:           ...$11.11
